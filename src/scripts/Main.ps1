@@ -21,6 +21,7 @@ Write-Output -InputObject ('ServiceConnection: {0}' -f $ServiceConnection)
 #endregion
 
 #region retrieve ServiceConnection Secret via Environment Variable
+Write-Output -InputObject ('Retrieving Environment variable info')
 $Credential = [Environment]::GetEnvironmentVariable($ServiceConnection) | ConvertFrom-Json
 Write-Output ('Credential clientid info {0}:' -f $($Credential.clientid))
 #endregion
