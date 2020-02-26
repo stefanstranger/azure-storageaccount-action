@@ -4,4 +4,5 @@ RUN pwsh -c "Install-Module Az.Profile -Acceptlicense -Force"
 RUN pwsh -c "Install-Module Az.Resources -Acceptlicense -Force"
 RUN pwsh -c "Install-Module Az.Storage -Acceptlicense -Force"
 COPY ./src/ ./tmp/
-ENTRYPOINT ["pwsh","-File","./tmp/scripts/Main.ps1"]
+ENTRYPOINT ["pwsh","-Command","Get-ChildItem ./ -recurse"]
+#ENTRYPOINT ["pwsh","-File","./tmp/scripts/Main.ps1"]
