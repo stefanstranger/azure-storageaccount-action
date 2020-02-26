@@ -22,7 +22,7 @@ Write-Output -InputObject ('ServiceConnection: {0}' -f $ServiceConnection)
 
 #region retrieve ServiceConnection Secret via Environment Variable
 $Credential = [Environment]::GetEnvironmentVariable($ServiceConnection) | ConvertFrom-Json
-Write-Output ('Credential clientid info: $Credential.clientid')
+Write-Output ('Credential clientid info {0}:' -f $($Credential.clientid))
 #endregion
 
 #region authenticate with Azure Subscription
@@ -38,9 +38,9 @@ Connect-AzAccount -ServicePrincipal -SubscriptionId $subscriptionId -TenantId $t
 switch ($action) {
     "createStorageAccount" {
         Write-Output -InputObject 'Create Storage Account'
-        Write-Output -InputObject ('Location: {0}' -f $Location)
-        Write-Output -InputObject ('AccountType: {0}' -f $AccountType)
-        Write-Output -InputObject ('AccessTier: {0}' -f $AccessTier)
+        Write-Output -InputObject ('Location: { 0 }' -f $Location)
+        Write-Output -InputObject ('AccountType: { 0 }' -f $AccountType)
+        Write-Output -InputObject ('AccessTier: { 0 }' -f $AccessTier)
         #region deploy Storage Account
         $params = @{
             'StorageAccountName' = $StorageAccountName
@@ -54,8 +54,8 @@ switch ($action) {
     }
     "removeStorageAccount" {
         Write-Output -InputObject 'Remove Storage Account'
-        Write-Output -InputObject ('Storage Account Name: {0}' -f $StorageAccountName)
-        Write-Output -InputObject ('Resourece Group Name: {0}' -f $ResourceGroupName)
+        Write-Output -InputObject ('Storage Account Name: { 0 }' -f $StorageAccountName)
+        Write-Output -InputObject ('Resourece Group Name: { 0 }' -f $ResourceGroupName)
         #region Remove Storage Account
         $params = @{
             'StorageAccountName' = $StorageAccountName
