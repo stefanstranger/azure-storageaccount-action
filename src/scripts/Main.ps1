@@ -22,6 +22,7 @@ Write-Output -InputObject ('ServiceConnection: {0}' -f $ServiceConnection)
 
 #region retrieve ServiceConnection Secret via Environment Variable
 $Credential = [Environment]::GetEnvironmentVariable($ServiceConnection) | ConvertFrom-Json
+Write-Output ('Credential clientid info: $Credential.clientid')
 #endregion
 
 #region authenticate with Azure Subscription
@@ -48,7 +49,7 @@ switch ($action) {
             'AccountType'        = $AccountType
             'AccessTier'         = $AccessTier
         }
-        .\tmp\scripts\Create-StorageAccount.ps1 @params
+        \tmp\scripts\Create-StorageAccount.ps1 @params
         #endregion
     }
     "removeStorageAccount" {
@@ -60,7 +61,7 @@ switch ($action) {
             'StorageAccountName' = $StorageAccountName
             'ResourceGroupName'  = $ResourceGroupName
         }
-        .\tmp\scripts\Remove-StorageAccount.ps1 @params
+        \tmp\scripts\Remove-StorageAccount.ps1 @params
         #endregion
     }
     default {
