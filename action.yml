@@ -1,0 +1,9 @@
+# action.yml
+name: "GitHub Action for Storage Account"
+author: "Stefan Stranger"
+description: "Deploys or removes Approved Azure Storage Account."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env: # Github Secret stored as Environment variable
+    SERVICECONNECTION: ${{ secrets.AZURE_CREDENTIALS }}
