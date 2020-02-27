@@ -38,6 +38,6 @@ runs:
     - -Location
     - ${{inputs.Location}}
     - -AccountType
-    - ${{inputs.AccountTyp}}
+    - ${{inputs.AccountType}}
     - -AccesTier
     - ${{inputs.AccessTier}}
