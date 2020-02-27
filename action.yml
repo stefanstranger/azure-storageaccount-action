@@ -39,5 +39,5 @@ runs:
     - ${{inputs.Location}}
     - -AccountType
     - ${{inputs.AccountType}}
-    - -AccesTier
+    - -AccessTier
     - ${{inputs.AccessTier}}
