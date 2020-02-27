@@ -3,7 +3,5 @@ RUN pwsh -c "Install-Module Az.Accounts -Scope AllUsers -Acceptlicense -Force"
 RUN pwsh -c "Install-Module Az.Profile -Scope AllUsers -Acceptlicense -Force"
 RUN pwsh -c "Install-Module Az.Resources -Scope AllUsers -Acceptlicense -Force"
 RUN pwsh -c "Install-Module Az.Storage -Scope AllUsers -Acceptlicense -Force"
-RUN pwsh -c "[Environment]::GetEnvironmentVariable('psmodulepath')"
-RUN pwsh -c "Get-Module -List"
 COPY ./src/ ./tmp/
 ENTRYPOINT ["pwsh","-File","/tmp/scripts/Main.ps1"]
