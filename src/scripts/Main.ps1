@@ -56,7 +56,7 @@ switch ($action) {
     "removeStorageAccount" {
         Write-Output -InputObject 'Remove Storage Account'
         Write-Output -InputObject ('Storage Account Name: {0}' -f $StorageAccountName)
-        Write-Output -InputObject ('Resourece Group Name: {0}' -f $ResourceGroupName)
+        Write-Output -InputObject ('Resource Group Name: {0}' -f $ResourceGroupName)
         #region Remove Storage Account
         $params = @{
             'StorageAccountName' = $StorageAccountName

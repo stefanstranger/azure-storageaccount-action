@@ -12,6 +12,7 @@ jobs:
         with:
           action: "removeStorageAccount"
           ServiceConnection: "SERVICECONNECTION"
+          ResourceGroupName: "ghactiondemo-rg"
           StorageAccountName: "githubactiondemosa"
           #args: '"-action" "createStorageAccount" "-StorageAccountName" "githubactiondemosa" "-ResourceGroupName" "ghactiondemo-rg" "-Location" "westeurope" "-AccountType" "Standard_LRS" "-AccessTier" "Cool" "-ServiceConnection" "SERVICECONNECTION"'
         env: # Github Secret stored as Environment variable
