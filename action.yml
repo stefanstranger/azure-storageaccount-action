@@ -2,6 +2,35 @@
 name: "GitHub Action for Storage Account"
 author: "Stefan Stranger"
 description: "Deploys or removes Approved Azure Storage Account."
+inputs:
+  action: # createStorageAccount or removeStorageAccount
+    description: "Name of the Action"
+    required: true
+    default: createStorageAccount
+  ServiceConnection: # Service Connection. Github Action Secret to login to Azure
+    description: "Name of Github Action environment variable"
+    required: true
+  ResourceGroupName:
+    description: "Name of ResourceGroup where to deploy or remove the Storage Account"
+    required: true
+  Location: #Location where to deploy the Storage Account
+    description: "Location where the Storage Account will be deployed"
+    required: false
+  AccountType: # Storage Account Type. Allowed values: "Standard_LRS", "Standard_GRS", "Standard_RAGRS", "Standard_ZRS"
+    description: "Name of ResourceGroup where to deploy or remove the Storage Account"
+    required: false
+    default: Standard_LRS
+  AccesTier: # Storage Account Access Tier. Allowed values: "Hot", "Cool"
+    description: "Access Tier for the Storage Account"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
+  args: # '"-action" "createStorageAccount" "-StorageAccountName" "githubactiondemosa" "-ResourceGroupName" "ghactiondemo-rg" "-Location" "westeurope" "-AccountType" "Standard_LRS" "-AccessTier" "Cool" "-ServiceConnection" "SERVICECONNECTION"'
+    - -action ${{ inputs.action}}
+    - -StorageAccountName ${{ inputs.action}}
+    - -ServiceConnection ${{ inputs.ServiceConnection}}
+    - -ResourceGroupName ${{ inputs.ResourceGroupName}}
+    - -Location ${{ inputs.Location}}
+    - -AccountType ${{ inputs.AccountTyp}}
+    - -AccesTier ${{ inputs.AccessTier}}
