@@ -27,10 +27,17 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args: # '"-action" "createStorageAccount" "-StorageAccountName" "githubactiondemosa" "-ResourceGroupName" "ghactiondemo-rg" "-Location" "westeurope" "-AccountType" "Standard_LRS" "-AccessTier" "Cool" "-ServiceConnection" "SERVICECONNECTION"'
-    - -action ${{ inputs.action}}
-    - -StorageAccountName ${{ inputs.action}}
-    - -ServiceConnection ${{ inputs.ServiceConnection}}
-    - -ResourceGroupName ${{ inputs.ResourceGroupName}}
-    - -Location ${{ inputs.Location}}
-    - -AccountType ${{ inputs.AccountTyp}}
-    - -AccesTier ${{ inputs.AccessTier}}
+    - -action
+    - ${{inputs.action}}
+    - -StorageAccountName
+    - ${{inputs.action}}
+    - -ServiceConnection
+    - ${{inputs.ServiceConnection}}
+    - -ResourceGroupName
+    - ${{inputs.ResourceGroupName}}
+    - -Location
+    - ${{inputs.Location}}
+    - -AccountType
+    - ${{inputs.AccountTyp}}
+    - -AccesTier
+    - ${{inputs.AccessTier}}
