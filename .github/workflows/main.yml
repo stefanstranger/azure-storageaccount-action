@@ -12,7 +12,8 @@ jobs:
         with:
           action: "createStorageAccount"
           ServiceConnection: "SERVICECONNECTION"
-          ResourceGroupName: "githubactiondemosa"
+          StorageAccountName: "githubactiondemosa"
+          ResourceGroupName: "ghactiondemo-rg"
           Location: "westeurope"
           AccountType: "Standard_LRS"
           AccessTier: "Cool"
