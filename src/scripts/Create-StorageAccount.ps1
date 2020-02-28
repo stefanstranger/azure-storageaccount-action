@@ -1,13 +1,10 @@
 #
 #.SYNOPSIS
-#	Creates Key Vault.
+#	Creates Storage Account.
 
 #.DESCRIPTION
-#	Creates the given Key Vault
-
-#.OUTPUTS
-#	Progress messages
-#*/
+#	Creates the given Storage Account
+#
 
 Param( 
     [string]$ResourceGroupName,
