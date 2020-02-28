@@ -111,4 +111,5 @@ Get-AzADServicePrincipal -ServicePrincipalName $app.ApplicationId.Guid -OutVaria
 #endregion
 
 ```
+
 Add the json output as [a secret](https://aka.ms/create-secrets-for-GitHub-workflows) (let's say with the name `AZURE_CREDENTIALS`) in the GitHub repository.
