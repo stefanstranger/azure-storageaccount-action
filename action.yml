@@ -26,7 +26,7 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args: # '"-action" "createStorageAccount" "-StorageAccountName" "githubactiondemosa" "-ResourceGroupName" "ghactiondemo-rg" "-Location" "westeurope" "-AccountType" "Standard_LRS" "-AccessTier" "Cool" "-ServiceConnection" "SERVICECONNECTION"'
+  args: 
     - -action
     - ${{inputs.action}}
     - -StorageAccountName
