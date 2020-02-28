@@ -30,5 +30,4 @@ Get-AzADServicePrincipal -ServicePrincipalName $app.ApplicationId.Guid -OutVaria
     "subscriptionId" = "$($subscription.subscriptionId)"
     "tenantId"       = "$($subscription.TenantID)"
 } | Convertto-json -Compress
-#endregionon -Compress
 #endregion
