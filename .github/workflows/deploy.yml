@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Azure Storage Account
-        uses: stefanstranger/azure-storageaccount-action@master
+        uses: stefanstranger/azure-storageaccount-action@v1
         with:
           action: "createStorageAccount"
           ServiceConnection: "SERVICECONNECTION"
