@@ -13,13 +13,13 @@ Set-AzContext -SubscriptionId $subscription.subscriptionId -TenantId $subscripti
 #endregion
 
 #region create SPN with Password
-$PlainPassword = "P@ssW0rD!123456789"
+$PlainPassword = "[enter password]"
 $Password = ConvertTo-SecureString $PlainPassword  -AsPlainText -Force
-New-AzADApplication -DisplayName "demogithubaction" -HomePage "https://www.stranger.nl/demo" -IdentifierUris "https://www.stranger.nl/demo" -Password $Password -OutVariable app
+New-AzADApplication -DisplayName "[enter displayname]" -HomePage "[enter a homepage]" -IdentifierUris "[enter a Identifier url]" -Password $Password -OutVariable app
 New-AzADServicePrincipal -ApplicationId $app.ApplicationId
 New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $app.ApplicationId.Guid
 
-Get-AzADApplication -DisplayNameStartWith 'demogithubaction' -OutVariable app
+Get-AzADApplication -DisplayNameStartWith '[enter name of AD Application from earlier step]' -OutVariable app
 Get-AzADServicePrincipal -ServicePrincipalName $app.ApplicationId.Guid -OutVariable SPN
 #endregion
 
@@ -30,4 +30,5 @@ Get-AzADServicePrincipal -ServicePrincipalName $app.ApplicationId.Guid -OutVaria
     "subscriptionId" = "$($subscription.subscriptionId)"
     "tenantId"       = "$($subscription.TenantID)"
 } | Convertto-json -Compress
+#endregionon -Compress
 #endregion
