@@ -2,7 +2,7 @@
 
 ## Automate your GitHub workflows using Azure Actions
 
-[GitHub Actions](https://help.github.com/en/articles/about-github-actions)  gives you the flexibility to build an automated software development lifecycle workflow. With [GitHub Actions for Azure](https://github.com/Azure/actions/) you can create workflows that you can set up in your repository to build, test, package, release and **deploy** to Azure.
+[GitHub Actions](https://help.github.com/en/articles/about-github-actions)  gives you the flexibility to build an automated software development lifecycle workflow.
 
 This Github Action is part of a blog post called "Comparing Azure DevOps Extension Release tasks with Github Action"
 
@@ -14,7 +14,7 @@ Get started today with a [free Azure account](https://azure.com/free/open-source
 
 This repository contains GitHub Action for [Azure Storage Account](https://github.com/stefanstranger/azure-storageaccount-action/blob/master/action.yml)
 
-## Sample workflow that uses Azure Storage Account Github Action
+## Sample workflows that uses Azure Storage Account Github Action
 
 ```yaml
 
